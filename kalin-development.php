@@ -46,18 +46,12 @@ add_action('plugins_loaded', 'kalin_development_admin_file');
 /**
  * Adiciona o Plugin Update Checker.
  */
-require 'caminho/para/plugin-update-checker/plugin-update-checker.php';
+require '/plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-    'https://github.com/seu-usuario/seu-repositorio',
+    'https://github.com/kalindigital/kalin-development',
     __FILE__,
-    'nome-unico-do-seu-plugin'
+    'kalin-development'
 );
-
-//Opcional: Se você estiver usando um repositório privado, especifique o token de acesso como este:
-$myUpdateChecker->setAuthentication('seu-token-de-acesso');
-
-//Opcional: Defina o caminho do arquivo de metadados do plugin. O caminho padrão é 'readme.txt', mas você também pode usar um arquivo JSON. Exemplo:
-$myUpdateChecker->setMetadataUrl('https://github.com/seu-usuario/seu-repositorio/raw/master/plugin.json');
 
 
 ?>
