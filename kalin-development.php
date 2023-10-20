@@ -3,7 +3,7 @@
  * Plugin Name: Kalin Development
  * Plugin URI: https://kalin.digital
  * Description: Plugin para desenvolvimento de temas e plugins (não desative ou atualize sem a permissão do seu programador).
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Kalin Digital
  * Author URI: https://kalin.digital
  * License: GPL2
@@ -46,12 +46,17 @@ add_action('plugins_loaded', 'kalin_development_admin_file');
 /**
  * Adiciona o Plugin Update Checker.
  */
-require '/plugin-update-checker/plugin-update-checker.php';
-$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+
+ define( 'LANDINMAX__VERSION', '1.0.0.0' );
+
+require dirname(__FILE__) . '/plugin-update-checker/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$myUpdateChecker = PucFactory::buildUpdateChecker(
     'https://github.com/kalindigital/kalin-development',
     __FILE__,
     'kalin-development'
 );
 
-
-?>
+//Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('main');
