@@ -3,7 +3,7 @@
  * Plugin Name: Kalin Development
  * Plugin URI: https://kalin.digital
  * Description: Plugin para desenvolvimento de temas e plugins (não desative ou atualize sem a permissão do seu programador).
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Kalin Digital
  * Author URI: https://kalin.digital
  * License: GPL2
